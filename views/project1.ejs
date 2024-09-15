@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Jokes Selector</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(80, 79, 72, 0.218);
+      width: 300px;
+      text-align: center;
+    }
+    .container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 10px rgba(120, 5, 141, 0.468);
+  }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+    select, button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background-color: #a72890;
+      color: #fff;
+      border-radius: 50px;
+      width:70%;
+    }
+    button:hover {
+      background-color: #fffdb9;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Jokes Selector</h1>
+    <form action="/display-jokes" method="POST">
+      <label for="selectBy">Select By:</label>
+      <select id="selectBy" name="selectBy" onchange="updateSubDropdown()">
+        <option value="id">ID</option>
+        <option value="type">Type</option>
+      </select>
+
+      <div id="idDropdown" style="display: none;">
+        <label for="id">ID:</label>
+        <select id="id" name="id">
+          <% for (let i = 1; i <= 100; i++) { %>
+            <option value="<%= i %>"><%= i %></option>
+          <% } %>
+        </select>
+      </div>
+
+      <div id="typeDropdown" style="display: none;">
+        <label for="type">Type:</label>
+        <select id="type" name="type">
+          <option value="Science">Science</option>
+          <option value="Puns">Puns</option>
+          <option value="Wordplay">Wordplay</option>
+          <option value="Math">Math</option>
+          <option value="Food">Food</option>
+          <option value="Sports">Sports</option>
+          <option value="Movies">Movies</option>
+        </select>
+      </div>
+
+      <button type="submit"> Display </button>
+      <h6>
+        Done by {ዕሌኒ} መስከረም 2017
+      </h6>
+    </form>
+  </div>
+
+  <script>
+    function updateSubDropdown() {
+      const selectBy = document.getElementById('selectBy').value;
+      document.getElementById('idDropdown').style.display = selectBy === 'id' ? 'block' : 'none';
+      document.getElementById('typeDropdown').style.display = selectBy === 'type' ? 'block' : 'none';
+    }
+  </script>
+</body>
+</html>

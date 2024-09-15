@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jokes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: whitesmoke;
+      margin: 70px;
+      padding: 10px;
+      justify-content: center;
+      align-items: center;
+    }
+    h1{
+      color: rgb(125, 42, 203);
+    }
+    .joke{
+         color: rgb(79, 37, 117);
+    }
+    </style>
+</head>
+<body >
+  <h1>Jokes</h1>
+  <ul style="list-style-type:none;">
+    <% jokes.forEach(joke => { %>
+     <div>
+        <li> ID : <%= joke.id %></li>
+        <li  class="joke"> JOKE :<%= joke.jokeText %></li>
+        <li> JOKE TYPE : <%= joke.jokeType %></li>
+     </div>
+     <br/>
+    <% }) %>
+  </ul>
+</body>
+</html>
