@@ -1,1 +1,1 @@
-this project accept user option and retrieve jokes based on their id or type .  on the 'id' option you can select upto 100 jokes Besides on the 'type' option there are 7 options. then you can get your free joke :)
+This project accept user input and retrieve jokes based on there id or type .  On the 'id' option you can select upto 100 jokes Besides on the 'type' option there are 7 options. then clients can get their free joke :)
